@@ -23,5 +23,5 @@ if __name__ == "__main__":
         mouse.press()
         for d in directions:
             x, y = d
-            mouse.goto(x, y)
+            mouse.move(x, y)
         mouse.press()
