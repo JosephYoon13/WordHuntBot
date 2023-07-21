@@ -59,9 +59,9 @@ class MouseControl:
                 self.goRight
             if (ydif > 0):
                 self.goLeft()
-            if (xdif < 0):
-                self.goUp()
             if (xdif > 0):
+                self.goUp()
+            if (xdif < 0):
                 self.goDown()
             dx -= 1
             dy -= 1
