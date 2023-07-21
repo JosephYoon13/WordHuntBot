@@ -58,22 +58,18 @@ class MouseControl:
         time.sleep(3)
 
     def move(self, new_x, new_y):
-        dx = 0
-        dy = 0
+        dx = 12
+        dy = 12
 
-        if new_x < self.x_curr:
+        if new_x <= self.x_curr:
             dx = 224
-        elif new_x > self.x_curr:
-            dx = 12  
-        else:
-            dx = 0         
+            if new_x == self.x_curr:
+                dx = 0     
 
-        if new_y < self.x_curr:
+        if new_y <= self.y_curr:
             dy = 224
-        elif new_y > self.x_curr:
-            dy = 12
-        else:
-            dy = 0
+            if new_y == self.y_curr:
+                dy = 0
 
         self.x_curr = new_x
         self.y_curr = new_y
