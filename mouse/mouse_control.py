@@ -16,19 +16,8 @@ class MouseControl:
             self.pressed = 0
         else:
             self.pressed = 1
-
-    def goLeft(self):
-        self.client.state = [int(self.pressed), 244, 0, 0]
-    
-    def goUp(self):
-        self.client.state = [int(self.pressed), 0, 244, 0]
-
-    def goRight(self):
-        self.client.state = [int(self.pressed), 12, 0, 0]
-    
-    def goDown(self):
-        self.client.state = [int(self.pressed), 0, 12, 0]
-
+        self.client.state = [int(self.pressed), 0, 0, 0]
+        self.client.send_current()
 
     def prepare(self):
         self.client.state = [0, 1, 0, 0]
@@ -42,32 +31,50 @@ class MouseControl:
         self.client.state = [int(self.pressed), 0, 0, 0]
         self.client.send_current()
 
-
     def goto(self, new_x, new_y):
-        xdif = self.x_curr - new_x
-        ydif = self.y_curr - new_y
-
-        dx = abs(xdif)
-        dy = abs(ydif)
-        
-        while (dx > 0 or dy > 0):
-            if (dy > 0):
-                time.sleep(3)
-                if (ydif < 0):
-                    self.goRight()
-                if (ydif > 0):
-                    self.goLeft()
-            if (dx > 0):
-                time.sleep(3)
-                if (xdif > 0):
-                    self.goUp()
-                if (xdif < 0):
-                    self.goDown()
+        xdiff = self.x_curr - new_x
+        ydiff = self.y_curr - new_y
+        dx = abs(xdiff)
+        dy = abs(ydiff)
+        while dx != 0 or dy != 0:
+            if dx > 0:
+                if xdiff > 0:
+                    self.client.state = [int(self.pressed), 0, 224, 0]
+                    self.client.send_current()
+                else:
+                    self.client.state = [int(self.pressed), 0, 12, 0]
+                    self.client.send_current()
+            if dy > 0:
+                if ydiff > 0:
+                    self.client.state = [int(self.pressed), 224, 0, 0]
+                    self.client.send_current()
+                else:
+                    self.client.state = [int(self.pressed), 12, 0, 0]
+                    self.client.send_current()
             dx -= 1
             dy -= 1
-        self.client.send_current()
+        time.sleep(3)
 
+    def move(self, new_x, new_y):
+        dx = 0
+        dy = 0
+
+        if new_x < self.x_curr:
+            dx = 224
+        elif new_x > self.x_curr:
+            dx = 12           
+
+        if new_y < self.x_curr:
+            dy = 224
+        elif new_y > self.x_curr:
+            dy = 12
         self.x_curr = new_x
         self.y_curr = new_y
+        self.client.state = [int(self.pressed), dy, dx, 0]
+        self.client.send_current()
+        time.sleep(3)
+
+
+
 
     
