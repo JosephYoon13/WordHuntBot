@@ -58,7 +58,7 @@ class MouseControl:
         while (dx > 0 or dy > 0):
             if (dy > 0):
                 if (ydif < 0):
-                    self.goRight
+                    self.goRight()
                 if (ydif > 0):
                     self.goLeft()
             if (dx > 0):
