@@ -77,6 +77,26 @@ class MouseControl:
         self.client.send_current()
         time.sleep(.04)
 
+    def moveReverse(self, new_x, new_y):
+        dx = 12
+        dy = 12
+
+        if new_x <= self.x_curr:
+            dx = 244
+            if new_x == self.x_curr:
+                dx = 0     
+
+        if new_y <= self.y_curr:
+            dy = 244
+            if new_y == self.y_curr:
+                dy = 0
+
+        self.x_curr = new_x
+        self.y_curr = new_y
+        self.client.state = [int(self.pressed), dy, dx, 0]
+        self.client.send_current()
+        # time.sleep(.04)
+
 
 
 
