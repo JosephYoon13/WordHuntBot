@@ -37,28 +37,19 @@ class MouseControl:
         dx = abs(xdiff)
         dy = abs(ydiff)
         while dx > 0 or dy > 0:
-            print(dx, dy)
             if dx > 0:
                 if xdiff > 0:
                     self.client.state = [int(self.pressed), 0, 244, 0]
                     self.client.send_current()
-                    self.client.state = [int(self.pressed), 0, 0, 0]
-                    self.client.send_current()
                 else:
                     self.client.state = [int(self.pressed), 0, 12, 0]
-                    self.client.send_current()
-                    self.client.state = [int(self.pressed), 0, 0, 0]
                     self.client.send_current()
             if dy > 0:
                 if ydiff > 0:
                     self.client.state = [int(self.pressed), 244, 0, 0]
                     self.client.send_current()
-                    self.client.state = [int(self.pressed), 0, 0, 0]
-                    self.client.send_current()
                 else:
                     self.client.state = [int(self.pressed), 12, 0, 0]
-                    self.client.send_current()
-                    self.client.state = [int(self.pressed), 0, 0, 0]
                     self.client.send_current()
             dx -= 1
             dy -= 1
