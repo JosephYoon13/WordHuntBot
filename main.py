@@ -89,3 +89,7 @@ if __name__ == "__main__":
             x, y = d
             mouse.move(x, y)
         mouse.press()
+        for d in reversed(directions):
+            x, y = d
+            mouse.move(x, y)
+
