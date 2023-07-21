@@ -20,21 +20,25 @@ class MouseControl:
         self.client.state = [int(self.pressed), 244, 0, 0]
         self.client.send_current()
         self.client.state = [int(self.pressed), 0, 0, 0]
+        self.client.send_current()
     
     def goUp(self):
         self.client.state = [int(self.pressed), 0, 244, 0]
         self.client.send_current()
         self.client.state = [int(self.pressed), 0, 0, 0]
+        self.client.send_current()
     
     def goRight(self):
         self.client.state = [int(self.pressed), 12, 0, 0]
         self.client.send_current()
         self.client.state = [int(self.pressed), 0, 0, 0]
+        self.client.send_current()
     
     def goDown(self):
         self.client.state = [int(self.pressed), 0, 12, 0]
         self.client.send_current()
         self.client.state = [int(self.pressed), 0, 0, 0]
+        self.client.send_current()
 
     def prepare(self):
         self.client.state = [0, 1, 0, 0]
@@ -46,6 +50,7 @@ class MouseControl:
         self.client.state = [0, 0, 226, 0]
         self.client.send_current()
         self.client.state = [int(self.pressed), 0, 0, 0]
+        self.client.send_current()
 
 
     def goto(self, new_x, new_y):
