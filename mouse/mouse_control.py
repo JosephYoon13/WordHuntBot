@@ -53,6 +53,8 @@ class MouseControl:
                     self.client.send_current()
             dx -= 1
             dy -= 1
+        self.x_curr = new_x
+        self.y_curr = new_y
         time.sleep(2)
 
     def move(self, new_x, new_y):
