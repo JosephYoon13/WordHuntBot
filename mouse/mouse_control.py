@@ -53,7 +53,7 @@ class MouseControl:
 
         dx = abs(xdif)
         dy = abs(ydif)
-
+        print(dy)
         while (dx > 0 or dy > 0):
             if (dy > 0):
                 if (ydif < 0):
