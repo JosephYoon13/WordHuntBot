@@ -15,6 +15,53 @@ class MouseControl:
             self.pressed = 0
         else:
             self.pressed = 1
+
+    def goLeft(self):
+        self.client.state = [int(self.pressed), 244, 0, 0]
+        self.client.send_current()
+        self.client.state = [int(self.pressed), 0, 0, 0]
     
+    def goUp(self):
+        self.client.state = [int(self.pressed), 0, 244, 0]
+        self.client.send_current()
+        self.client.state = [int(self.pressed), 0, 0, 0]
+    
+    def goRight(self):
+        self.client.state = [int(self.pressed), 12, 0, 0]
+        self.client.send_current()
+        self.client.state = [int(self.pressed), 0, 0, 0]
+    
+    def goDown(self):
+        self.client.state = [int(self.pressed), 0, 12, 0]
+        self.client.send_current()
+        self.client.state = [int(self.pressed), 0, 0, 0]
+
+    def prepare(self):
+        self.client.state = [0, 1, 0, 0]
+        self.client.send_current()
+        self.client.state = [0, 255, 0, 0]
+        self.client.send_current()
+
+    def goto(self, new_x, new_y):
+        xdif = self.x - new_x
+        ydif = self.y - new_y
+
+        dx = abs(xdif)
+        dy = abs(ydif)
+
+        while (dx > 0 or dy > 0):
+            if (xdif < 0):
+                self.goRight
+            if (xdif > 0):
+                self.goLeft()
+            if (ydif < 0):
+                self.goUp()
+            if (ydif > 0):
+                self.goDown()
+            dx -= 1
+            dy -= 1
+
+        self.x = new_x
+        self.y = new_y
 
     
