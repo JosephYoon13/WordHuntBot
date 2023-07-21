@@ -24,13 +24,9 @@ class MouseControl:
         self.client.send_current()
         self.client.state = [0, 255, 0, 0]
         self.client.send_current()
-        # self.client.state = [0, 238, 0, 0]
-        # self.client.send_current()
-        # self.client.state = [0, 0, 226, 0]
-        # self.client.send_current()
-        self.client.state = [0, 199, 0, 0]
+        self.client.state = [0, 238, 0, 0]
         self.client.send_current()
-        self.client.state = [0, 0, 135, 0]
+        self.client.state = [0, 0, 226, 0]
         self.client.send_current()
         time.sleep(.03)
         
@@ -43,17 +39,17 @@ class MouseControl:
         while dx > 0 or dy > 0:
             if dx > 0:
                 if xdiff > 0:
-                    self.client.state = [int(self.pressed), 0, 214, 0]
+                    self.client.state = [int(self.pressed), 0, 244, 0]
                     self.client.send_current()
                 else:
-                    self.client.state = [int(self.pressed), 0, 42, 0]
+                    self.client.state = [int(self.pressed), 0, 12, 0]
                     self.client.send_current()
             if dy > 0:
                 if ydiff > 0:
-                    self.client.state = [int(self.pressed), 214, 0, 0]
+                    self.client.state = [int(self.pressed), 244, 0, 0]
                     self.client.send_current()
                 else:
-                    self.client.state = [int(self.pressed), 42, 0, 0]
+                    self.client.state = [int(self.pressed), 12, 0, 0]
                     self.client.send_current()
             dx -= 1
             dy -= 1
@@ -62,16 +58,16 @@ class MouseControl:
         time.sleep(.03)
 
     def move(self, new_x, new_y):
-        dx = 42
-        dy = 42
+        dx = 12
+        dy = 12
 
         if new_x <= self.x_curr:
-            dx = 214
+            dx = 244
             if new_x == self.x_curr:
                 dx = 0     
 
         if new_y <= self.y_curr:
-            dy = 214
+            dy = 244
             if new_y == self.y_curr:
                 dy = 0
 
