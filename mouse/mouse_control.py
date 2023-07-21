@@ -28,7 +28,7 @@ class MouseControl:
         self.client.send_current()
         self.client.state = [0, 0, 226, 0]
         self.client.send_current()
-        time.sleep(.04)
+        time.sleep(.05)
         
 
     def goto(self, new_x, new_y):
@@ -55,7 +55,7 @@ class MouseControl:
             dy -= 1
         self.x_curr = new_x
         self.y_curr = new_y
-        time.sleep(.04)
+        time.sleep(.05)
 
     def move(self, new_x, new_y):
         dx = 12
@@ -75,7 +75,7 @@ class MouseControl:
         self.y_curr = new_y
         self.client.state = [int(self.pressed), dy, dx, 0]
         self.client.send_current()
-        time.sleep(.04)
+        time.sleep(.05)
 
     def moveReverse(self, new_x, new_y):
         dx = 12
