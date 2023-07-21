@@ -41,6 +41,11 @@ class MouseControl:
         self.client.send_current()
         self.client.state = [0, 255, 0, 0]
         self.client.send_current()
+        self.client.state = [0, 238, 0, 0]
+        self.client.send_current()
+        self.client.state = [0, 0, 226, 0]
+        self.client.send_current()
+
 
     def goto(self, new_x, new_y):
         xdif = self.x_curr - new_x
