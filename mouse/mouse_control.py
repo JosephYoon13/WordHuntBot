@@ -1,4 +1,5 @@
 import mouse.mouse_emulate as me
+import time
 
 class MouseControl:
     def __init__(self):
@@ -62,11 +63,13 @@ class MouseControl:
         
         while (dx > 0 or dy > 0):
             if (dy > 0):
+                time.sleep(0.2)
                 if (ydif < 0):
                     self.goRight()
                 if (ydif > 0):
                     self.goLeft()
             if (dx > 0):
+                time.sleep(0.2)
                 if (xdif > 0):
                     self.goUp()
                 if (xdif < 0):
