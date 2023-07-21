@@ -53,14 +53,14 @@ def main():
         if len(word) >= 3 and t.search(word) and word not in found_words:
             found_words[word] = list(directions)
 
-        recurse(i, j + 1, 'R', word)
-        recurse(i, j - 1, 'L', word)
-        recurse(i + 1, j, 'D', word)
-        recurse(i - 1, j, 'U', word)
-        recurse(i + 1, j + 1, 'DR', word)
-        recurse(i + 1, j - 1, 'DL', word)
-        recurse(i - 1, j + 1, 'UR', word)
-        recurse(i - 1, j - 1, 'UL', word)
+        recurse(i, j + 1, (i, j + 1), word)
+        recurse(i, j - 1, (i, j - 1), word)
+        recurse(i + 1, j, (i + 1, j), word)
+        recurse(i - 1, j, (i - 1, j), word)
+        recurse(i + 1, j + 1, (i + 1, j + 1), word)
+        recurse(i + 1, j - 1, (i + 1, j - 1), word)
+        recurse(i - 1, j + 1, (i - 1, j + 1), word)
+        recurse(i - 1, j - 1, (i - 1, j - 1), word)
         del visited[-1]
         del directions[-1]
         word = word[:-1]
