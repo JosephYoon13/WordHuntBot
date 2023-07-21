@@ -28,23 +28,11 @@ class MouseControl:
         # self.client.send_current()
         # self.client.state = [0, 0, 226, 0]
         # self.client.send_current()
-        self.client.state = [0, 129, 0, 0]
+        self.client.state = [0, 199, 0, 0]
         self.client.send_current()
-        time.sleep(.5)
-        self.client.state = [0, 200, 226, 0]
+        self.client.state = [0, 0, 135, 0]
         self.client.send_current()
-        time.sleep(.5)
-        self.client.state = [0, 0, 129, 0]
-        self.client.send_current()
-        time.sleep(.5)
-        self.client.state = [0, 0, 129, 0]
-        self.client.send_current()
-        time.sleep(.5)
-        self.client.state = [0, 0, 150, 0]
-        self.client.send_current()
-        time.sleep(.5)
-        self.client.state = [int(self.pressed), 0, 0, 0]
-        self.client.send_current()
+        
 
     def goto(self, new_x, new_y):
         xdiff = self.x_curr - new_x
@@ -54,17 +42,17 @@ class MouseControl:
         while dx > 0 or dy > 0:
             if dx > 0:
                 if xdiff > 0:
-                    self.client.state = [int(self.pressed), 0, 129, 0]
+                    self.client.state = [int(self.pressed), 0, 214, 0]
                     self.client.send_current()
                 else:
-                    self.client.state = [int(self.pressed), 0, 127, 0]
+                    self.client.state = [int(self.pressed), 0, 42, 0]
                     self.client.send_current()
             if dy > 0:
                 if ydiff > 0:
-                    self.client.state = [int(self.pressed), 129, 0, 0]
+                    self.client.state = [int(self.pressed), 214, 0, 0]
                     self.client.send_current()
                 else:
-                    self.client.state = [int(self.pressed), 127, 0, 0]
+                    self.client.state = [int(self.pressed), 42, 0, 0]
                     self.client.send_current()
             dx -= 1
             dy -= 1
@@ -73,16 +61,16 @@ class MouseControl:
         time.sleep(.5)
 
     def move(self, new_x, new_y):
-        dx = 127
-        dy = 127
+        dx = 42
+        dy = 42
 
         if new_x <= self.x_curr:
-            dx = 129
+            dx = 214
             if new_x == self.x_curr:
                 dx = 0     
 
         if new_y <= self.y_curr:
-            dy = 129
+            dy = 214
             if new_y == self.y_curr:
                 dy = 0
 
