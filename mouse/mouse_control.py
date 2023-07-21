@@ -20,10 +20,10 @@ class MouseControl:
         self.client.send_current()
 
     def prepare(self):
-        # self.client.state = [0, 1, 0, 0]
-        # self.client.send_current()
-        # self.client.state = [0, 255, 0, 0]
-        # self.client.send_current()
+        self.client.state = [0, 1, 0, 0]
+        self.client.send_current()
+        self.client.state = [0, 255, 0, 0]
+        self.client.send_current()
         # self.client.state = [0, 238, 0, 0]
         # self.client.send_current()
         # self.client.state = [0, 0, 226, 0]
