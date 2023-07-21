@@ -36,7 +36,7 @@ class MouseControl:
         ydiff = self.y_curr - new_y
         dx = abs(xdiff)
         dy = abs(ydiff)
-        while dx != 0 or dy != 0:
+        while dx > 0 or dy > 0:
             if dx > 0:
                 if xdiff > 0:
                     self.client.state = [int(self.pressed), 0, 224, 0]
