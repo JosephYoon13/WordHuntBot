@@ -1,5 +1,6 @@
 from mouse.mouse_control import MouseControl
 import trie
+import time
 
 # directions_list = [[(0, 1), (1, 0), (2, 0), (3, 0), (2, 1), (1, 1), (1, 2)],
 #               [(0, 2), (0, 1), (1, 0), (1, 1), (2, 1), (3, 0), (3, 1)]
@@ -85,6 +86,7 @@ if __name__ == "__main__":
         init_x, init_y = directions[0]
         mouse.goto(init_x, init_y)
         mouse.press()
+        time.sleep(.05)
         for d in directions:
             x, y = d
             mouse.move(x, y)
