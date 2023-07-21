@@ -30,14 +30,19 @@ class MouseControl:
         # self.client.send_current()
         self.client.state = [0, 129, 0, 0]
         self.client.send_current()
+        time.sleep(.5)
         self.client.state = [0, 200, 226, 0]
         self.client.send_current()
+        time.sleep(.5)
         self.client.state = [0, 0, 129, 0]
         self.client.send_current()
+        time.sleep(.5)
         self.client.state = [0, 0, 129, 0]
         self.client.send_current()
+        time.sleep(.5)
         self.client.state = [0, 0, 150, 0]
         self.client.send_current()
+        time.sleep(.5)
         self.client.state = [int(self.pressed), 0, 0, 0]
         self.client.send_current()
 
