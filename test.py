@@ -1,6 +1,6 @@
 from collections import OrderedDict
 import trie
-from image_processing import processImage
+# from image_processing import processImage
 
 
 def main():
