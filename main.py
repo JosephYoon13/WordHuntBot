@@ -9,7 +9,6 @@ if __name__ == "__main__":
     mouse.prepare()
     for directions in directions_list:
         init_x, init_y = directions[0]
-        print(init_x, init_y)
         mouse.goto(init_x, init_y)
         mouse.press()
         for d in directions:
