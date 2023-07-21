@@ -63,13 +63,13 @@ class MouseControl:
         
         while (dx > 0 or dy > 0):
             if (dy > 0):
-                time.sleep(2)
+                time.sleep(5)
                 if (ydif < 0):
                     self.goRight()
                 if (ydif > 0):
                     self.goLeft()
             if (dx > 0):
-                time.sleep(2)
+                time.sleep(5)
                 if (xdif > 0):
                     self.goUp()
                 if (xdif < 0):
