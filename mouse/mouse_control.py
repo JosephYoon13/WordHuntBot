@@ -43,8 +43,8 @@ class MouseControl:
         self.client.send_current()
 
     def goto(self, new_x, new_y):
-        xdif = self.x - new_x
-        ydif = self.y - new_y
+        xdif = self.x_curr - new_x
+        ydif = self.y_curr - new_y
 
         dx = abs(xdif)
         dy = abs(ydif)
@@ -61,7 +61,7 @@ class MouseControl:
             dx -= 1
             dy -= 1
 
-        self.x = new_x
-        self.y = new_y
+        self.x_curr = new_x
+        self.y_curr = new_y
 
     
