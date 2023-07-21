@@ -36,6 +36,7 @@ class MouseControl:
         ydiff = self.y_curr - new_y
         dx = abs(xdiff)
         dy = abs(ydiff)
+        print(dx, dy)
         while dx > 0 or dy > 0:
             if dx > 0:
                 if xdiff > 0:
