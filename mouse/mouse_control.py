@@ -55,14 +55,16 @@ class MouseControl:
         dy = abs(ydif)
 
         while (dx > 0 or dy > 0):
-            if (ydif < 0):
-                self.goRight
-            if (ydif > 0):
-                self.goLeft()
-            if (xdif > 0):
-                self.goUp()
-            if (xdif < 0):
-                self.goDown()
+            if (dy > 0):
+                if (ydif < 0):
+                    self.goRight
+                if (ydif > 0):
+                    self.goLeft()
+            if (dx > 0):
+                if (xdif > 0):
+                    self.goUp()
+                if (xdif < 0):
+                    self.goDown()
             dx -= 1
             dy -= 1
 
