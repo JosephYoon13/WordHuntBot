@@ -45,6 +45,7 @@ class MouseControl:
         self.client.send_current()
         self.client.state = [0, 0, 226, 0]
         self.client.send_current()
+        self.client.state = [int(self.pressed), 0, 0, 0]
 
 
     def goto(self, new_x, new_y):
@@ -53,10 +54,11 @@ class MouseControl:
 
         dx = abs(xdif)
         dy = abs(ydif)
-        print(dy)
+        
         while (dx > 0 or dy > 0):
             if (dy > 0):
                 if (ydif < 0):
+                    print(dy)
                     self.goRight
                 if (ydif > 0):
                     self.goLeft()
