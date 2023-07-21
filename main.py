@@ -11,7 +11,8 @@ if __name__ == "__main__":
     d = directions[0]
     x, y = d
     # mouse.goto(x,y)
-    mouse.goto(0, 3)
+    # mouse.goto(0, 3)
+    mouse.goRight()
     # for directions in directions_list:
     #     init_x, init_y = directions[0]
     #     mouse.goto(init_x, init_y)
