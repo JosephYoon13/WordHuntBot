@@ -45,12 +45,14 @@ class MouseControl:
                     self.client.state = [int(self.pressed), 0, 0, 0]
                     self.client.send_current()
                 else:
+                    print(new_x, "bad")
                     self.client.state = [int(self.pressed), 0, 12, 0]
                     self.client.send_current()
                     self.client.state = [int(self.pressed), 0, 0, 0]
                     self.client.send_current()
             if dy > 0:
                 if ydiff > 0:
+                    print(new_y, "bad")
                     self.client.state = [int(self.pressed), 224, 0, 0]
                     self.client.send_current()
                     self.client.state = [int(self.pressed), 0, 0, 0]
