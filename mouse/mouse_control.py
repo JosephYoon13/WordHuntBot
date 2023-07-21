@@ -1,4 +1,4 @@
-import mouse_emulate as me
+import mouse.mouse_emulate as me
 
 class MouseControl:
     def __init__(self):
