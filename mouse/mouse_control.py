@@ -20,13 +20,23 @@ class MouseControl:
         self.client.send_current()
 
     def prepare(self):
-        self.client.state = [0, 1, 0, 0]
+        # self.client.state = [0, 1, 0, 0]
+        # self.client.send_current()
+        # self.client.state = [0, 255, 0, 0]
+        # self.client.send_current()
+        # self.client.state = [0, 238, 0, 0]
+        # self.client.send_current()
+        # self.client.state = [0, 0, 226, 0]
+        # self.client.send_current()
+        self.client.state = [0, 129, 0, 0]
         self.client.send_current()
-        self.client.state = [0, 255, 0, 0]
+        self.client.state = [0, 200, 226, 0]
         self.client.send_current()
-        self.client.state = [0, 238, 0, 0]
+        self.client.state = [0, 0, 129, 0]
         self.client.send_current()
-        self.client.state = [0, 0, 226, 0]
+        self.client.state = [0, 0, 129, 0]
+        self.client.send_current()
+        self.client.state = [0, 0, 150, 0]
         self.client.send_current()
         self.client.state = [int(self.pressed), 0, 0, 0]
         self.client.send_current()
@@ -39,35 +49,35 @@ class MouseControl:
         while dx > 0 or dy > 0:
             if dx > 0:
                 if xdiff > 0:
-                    self.client.state = [int(self.pressed), 0, 244, 0]
+                    self.client.state = [int(self.pressed), 0, 129, 0]
                     self.client.send_current()
                 else:
-                    self.client.state = [int(self.pressed), 0, 12, 0]
+                    self.client.state = [int(self.pressed), 0, 127, 0]
                     self.client.send_current()
             if dy > 0:
                 if ydiff > 0:
-                    self.client.state = [int(self.pressed), 244, 0, 0]
+                    self.client.state = [int(self.pressed), 129, 0, 0]
                     self.client.send_current()
                 else:
-                    self.client.state = [int(self.pressed), 12, 0, 0]
+                    self.client.state = [int(self.pressed), 127, 0, 0]
                     self.client.send_current()
             dx -= 1
             dy -= 1
         self.x_curr = new_x
         self.y_curr = new_y
-        # time.sleep(.1)
+        time.sleep(.5)
 
     def move(self, new_x, new_y):
-        dx = 12
-        dy = 12
+        dx = 127
+        dy = 127
 
         if new_x <= self.x_curr:
-            dx = 244
+            dx = 129
             if new_x == self.x_curr:
                 dx = 0     
 
         if new_y <= self.y_curr:
-            dy = 244
+            dy = 129
             if new_y == self.y_curr:
                 dy = 0
 
@@ -75,7 +85,7 @@ class MouseControl:
         self.y_curr = new_y
         self.client.state = [int(self.pressed), dy, dx, 0]
         self.client.send_current()
-        # time.sleep(.1)
+        time.sleep(.5)
 
 
 
