@@ -9,7 +9,7 @@ sudo /etc/init.d/bluetooth start
 #Get current Path
 export C_PATH=$(pwd)
 
-tmux kill-window -t thanhle:app >/dev/null 2>&1
+#tmux kill-window -t thanhle:app >/dev/null 2>&1
 
 [ ! -z "$(tmux has-session -t thanhle 2>&1)" ] && tmux new-session -s thanhle -n app -d
 [ ! -z "$(tmux has-session -t thanhle:app.1 2>&1)" ] && tmux split-window -t thanhle:app -h
