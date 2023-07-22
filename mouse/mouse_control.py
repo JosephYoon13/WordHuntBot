@@ -77,7 +77,7 @@ class MouseControl:
         self.client.send_current()
         self.client.state = [int(self.pressed), 0, 0, 0]
         self.client.send_current()
-        for i in range(10):
+        for i in range(5):
             self.client.send_current()
         # time.sleep(.05)
 
