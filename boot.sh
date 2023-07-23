@@ -8,6 +8,7 @@ sudo /etc/init.d/bluetooth start
 ./updateName.sh My_Mouse_Keyboard
 #Get current Path
 export C_PATH=$(pwd)
+echo $C_PATH
 
 tmux kill-window -t thanhle:app >/dev/null 2>&1
 
