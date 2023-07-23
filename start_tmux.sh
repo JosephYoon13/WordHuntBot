@@ -1,3 +1,3 @@
 #!/bin/bash
 
-tmux new-session -d -s new_session
+tmux new-session -d -s my_session
