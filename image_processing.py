@@ -33,7 +33,7 @@ def processImage():
     text = text.replace('|', 'I')
     text = text.lower()
 
-    if len(text) < 16:
+    if len(text) != 16:
         print("Invalid; enter board: ")
         text = input()
     print(text)
