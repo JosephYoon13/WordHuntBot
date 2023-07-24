@@ -74,7 +74,7 @@ if __name__ == "__main__":
     directions_list = []
 
     # Open the text file in read mode
-    with open('out.txt', 'r') as file:
+    with open('/home/rewq3/Desktop/Projects/WordHuntBot/out.txt', 'r') as file:
         # Read each line from the file
         for line in file:
             # Split the line by commas and convert elements back to integers
