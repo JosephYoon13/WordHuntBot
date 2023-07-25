@@ -37,3 +37,10 @@ http://web.archive.org/web/20210308091008/https://thanhle.me/make-raspberry-pi3-
 ```
 ./start.sh
 ```
+
+- or if you want to run the program on your raspberry pi, modify ./start.sh so it looks like this
+
+```
+python3 find_directions.py
+python3 main.py"
+```
