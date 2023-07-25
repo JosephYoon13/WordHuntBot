@@ -22,7 +22,3 @@ tmux send-keys -t thanhle:app.0 'cd $C_PATH/server && sudo python3 ./btk_server.
 tmux send-keys -t thanhle:app.1 'cd $C_PATH/mouse  && reset && cd ..' C-m
 tmux send-keys -t thanhle:app.2 'cd $C_PATH/keyboard  && reset && cd ..' C-m
 tmux send-keys -t thanhle:app.1 'bluetoothctl' C-m
-
-# python3 find_directions.py
-# scp out.txt rewq3@raspberrypi:/home/rewq3/Desktop/Projects/WordHuntBot
-# ssh rewq3@raspberrypi "python3 /home/rewq3/Desktop/Projects/WordHuntBot/main.py"
