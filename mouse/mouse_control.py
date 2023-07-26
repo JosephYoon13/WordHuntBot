@@ -58,10 +58,6 @@ class MouseControl:
         time.sleep(.05)
 
     def move(self, new_x, new_y):
-        self.client.state = [int(self.pressed), 0, 0, 0]
-        self.client.send_current()
-        for i in range(10):
-            self.client.send_current()
         dx = 12
         dy = 12
 
