@@ -57,7 +57,7 @@ class MouseControl:
             dy -= 1
         self.x_curr = new_x
         self.y_curr = new_y
-        # time.sleep(.05)
+        time.sleep(.05)
 
     def move(self, new_x, new_y):
         dx = 12
